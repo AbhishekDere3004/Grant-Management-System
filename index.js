@@ -10,6 +10,7 @@ const router = require("./routes/router");
 
 // Import controller
 const allUserController = require('./controllers/allUserController');
+const cors = require ("cors")
 
 
 // Connect to MongoDB
@@ -17,7 +18,7 @@ dbconnect();
 
 // Middleware for parsing JSON requests
 app.use(express.json());
-
+app.use(cors());
 // Routes
 app.use("/api/auth", router);
 
